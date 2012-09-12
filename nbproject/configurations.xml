@@ -2,7 +2,11 @@
 <configurationDescriptor version="62">
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <df name="src" root="src">
-      <in>main.c</in>
+      <in>SearchTrace.cpp</in>
+      <in>SearchTrace.h</in>
+      <in>VideoHandler.cpp</in>
+      <in>VideoHandler.h</in>
+      <in>main.cpp</in>
     </df>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
