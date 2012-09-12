@@ -5,21 +5,27 @@
 #include <list>
 #include <string>
 
+#include "Entry.h"
+
 using namespace std;
 
 class SearchTrace {
 private:
-    list<list<string> > meTrace;
-    list<list<string> > deTrace;
+    list<list<Entry*> > meTrace;
+    list<list<Entry*> > deTrace;
+
+    list<pair<int,int> > meCurr;
+    list<pair<int,int> > deCurr;
+
 
 public:
     SearchTrace();
     
-    void insertMeTrace(list<string> trace);
-    void insertDeTrace(list<string> trace);
+    void insertMeTrace(list<Entry*> trace, pair<int,int> p);
+    void insertDeTrace(list<Entry*> trace, pair<int,int> p);
 
-    list<string> getMeTrace();
-    list<string> getDeTrace();
+    list<Entry*> getMeTrace();
+    list<Entry*> getDeTrace();
 
     int getMeListSize();
     int getDeListSize();

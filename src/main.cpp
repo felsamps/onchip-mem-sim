@@ -16,7 +16,10 @@ int main(int argc, char** argv) {
 	string traceFileName(argv[6]);
 	string offLineStatsFileName(argv[7]);
 	
-	VideoHandler vh(nv, nf, w, h);
+	VideoHandler vh(nv, nf, w, h, traceFileName);
+	vh.parseTraceFile(); 
+
+	getchar();
 	
 	return (EXIT_SUCCESS);
 }

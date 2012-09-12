@@ -12,3 +12,4 @@
 *.a
 
 onchip_sim
+*.mat
