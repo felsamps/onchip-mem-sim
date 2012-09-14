@@ -1,4 +1,5 @@
 #include "VideoHandler.h"
+#include "StatMap.h"
 
 
 VideoHandler::VideoHandler(int nv, int nf, int w, int h, string traceFileName) {
@@ -24,6 +25,9 @@ void VideoHandler::parseTraceFile() {
 	int x, y, cv, cf, rv, rf;
 	list<Entry*> l;
 	Entry *e;
+
+	cout << "Parsing trace file..." << endl;
+
 	while(!this->traceFile.eof()) {
 		char type;
 		this->traceFile >> type;
@@ -53,11 +57,20 @@ void VideoHandler::parseTraceFile() {
 
 			case 'e':
 				pair<int,int> p(cv, cf);
-				this->video[rv][rf][x][y]->insertDeTrace(l, p);
+				if(cv == rv) { /* Motion Estimation */
+					this->video[rv][rf][x][y]->insertMeTrace(l, p);
+				}
+				else { /* Disparity Estimation */
+					this->video[rv][rf][x][y]->insertDeTrace(l, p);
+				}
 				l.clear();
 				break;
 		}
 		
 	}
 
+}
+
+SearchTrace* VideoHandler::getSearchTrace(int view, int frame, int x, int y) {
+	return this->video[view][frame][x][y];
 }

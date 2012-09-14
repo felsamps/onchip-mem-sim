@@ -27,6 +27,9 @@ public:
     list<Entry*> getMeTrace();
     list<Entry*> getDeTrace();
 
+    pair<int,int> getMeCurr();
+    pair<int,int> getDeCurr();
+
     int getMeListSize();
     int getDeListSize();
  

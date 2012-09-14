@@ -39,6 +39,18 @@ list<Entry*> SearchTrace::getDeTrace() {
 	return returnable;
 }
 
+pair<int,int> SearchTrace::getMeCurr() {
+	pair<int,int> returnable = meCurr.front();
+	meCurr.pop_front();
+	return returnable;
+}
+
+pair<int,int> SearchTrace::getDeCurr() {
+	pair<int,int> returnable = deCurr.front();
+	deCurr.pop_front();
+	return returnable;
+}
+
 int SearchTrace::getMeListSize() {
 	return meTrace.size();
 }

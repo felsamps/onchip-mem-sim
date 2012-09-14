@@ -2,9 +2,16 @@
 <configurationDescriptor version="62">
   <logicalFolder name="root" displayName="root" projectFiles="true">
     <df name="src" root="src">
+      <in>Defines.h</in>
       <in>Entry.h</in>
+      <in>OnchipMemory.cpp</in>
+      <in>OnchipMemory.h</in>
+      <in>SearchEngine.cpp</in>
+      <in>SearchEngine.h</in>
       <in>SearchTrace.cpp</in>
       <in>SearchTrace.h</in>
+      <in>StatMap.cpp</in>
+      <in>StatMap.h</in>
       <in>VideoHandler.cpp</in>
       <in>VideoHandler.h</in>
       <in>main.cpp</in>
